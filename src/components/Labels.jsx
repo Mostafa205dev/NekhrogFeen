@@ -47,7 +47,7 @@ export default function Labels({
           <option value="cairo">Cairo</option>
           <option value="alexandria">Alexandria</option>
           <option value="giza">Giza</option>
-          <option value="luxor">Luxor</option>
+          {/* <option value="luxor">Luxor</option> */}
         </select>
       </label>
     </div>
