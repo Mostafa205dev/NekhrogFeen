@@ -9,8 +9,8 @@
   width: 100%;
 }
 .title {
-    font-weight: bold;
-    color: rgb(55, 55, 241);
+  font-weight: bold;
+  color: rgb(55, 55, 241);
 }
 .middle-buttons button {
   border: none;
@@ -37,12 +37,12 @@
 
 
 .join {
-    background-color: rgb(55, 55, 241);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 16px;
+  background-color: rgb(55, 55, 241);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
 }
 
 
@@ -54,8 +54,12 @@
     align-items: center;
     gap: 10px
   }
+  .middle-buttons{
+    display: flex;
+    flex-direction: row;
+  }
   .middle-buttons button {
-    padding: 20px;
+    /* padding: 20px; */
 
   }
   .title{
