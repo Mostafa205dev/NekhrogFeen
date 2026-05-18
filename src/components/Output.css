@@ -25,8 +25,8 @@
 }
 
 .category-card{
-    min-width: 300px;
-    min-height: 80px;
+    /* min-width: 300px; */
+    /* min-height: 80px; */
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -118,7 +118,10 @@
     align-items: center;
     }
     .place-item {
-    max-width: 250px;
+     max-width: 200px;
+    }
+    .place-item img{
+        height: 150px;
     }
 
 }

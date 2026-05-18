@@ -25,7 +25,7 @@ export default function Output({ plan }) {
           return (
             <div className="category-card" key={category}>
               <div className="category-header">
-                <h2>{category}</h2>
+                <h2>{category}s</h2>
 
                 {items.length > 3 && (
                   <button
