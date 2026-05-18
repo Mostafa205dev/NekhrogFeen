@@ -1,0 +1,124 @@
+/* Plan */
+.output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+.output > h2{
+    font-size: 24px;
+    color: #222;
+    justify-content: start;
+    text-align: start;
+}
+
+.result{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.category-card{
+    min-width: 300px;
+    min-height: 80px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 20px;
+    border-radius: 20px;
+    gap:10px;
+    backdrop-filter: blur(5px);
+
+}
+
+.category-card h2{
+    margin-bottom: 20px;
+    color: black;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.place-item{
+    overflow: hidden;
+    position: relative;
+    background: white;
+    width: 100%;
+    max-width: 350px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    gap:8px;
+    margin-bottom: 15px;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.827);
+}
+.itemDiscription{
+    /* position: relative; */
+    padding: 10px;
+    /* gap: 200px; */
+}
+.place-item img{
+    width: 100%;
+    height: 60%;
+    border-radius: 15px 15px  0  0 ;
+    /* height: 100px; */
+}
+
+
+
+
+.category-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px 0 100px;
+}
+
+.view-more-btn {
+  border: none;
+  background: #0077ff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.view-more-btn:hover {
+  background: #005fd1;
+}
+
+
+
+@media (max-width:600px) {
+    .category-header{
+        /* display: flex; */
+        /* flex-direction: row; */
+        justify-content: center;
+        /* align-items: center; */
+        gap: 90px;
+    }
+
+    .items{
+    flex-direction: column;
+    align-items: center;
+    }
+    .place-item {
+    max-width: 250px;
+    }
+
+}
