@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="header-container">
       <header className="title">
-        <h2>Trip Planner</h2>
+        <h2>NekhrogFeen</h2>
       </header>
 
       <div className="middle-buttons">
