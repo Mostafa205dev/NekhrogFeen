@@ -6,7 +6,7 @@ const cinemas = [
     price: 180,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/photo.jpg",
+    image: "../images/Cinemas/photo.jpg",
     city: "cairo",
   },
   {
@@ -16,7 +16,7 @@ const cinemas = [
     price: 180,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/vox-cinemas.jpg",
+    image: "../images/Cinemas/vox-cinemas.jpg",
     city: "cairo",
   },
   {
@@ -26,7 +26,7 @@ const cinemas = [
     price: 180,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/vox-cinemas.jpg",
+    image: "../images/Cinemas/vox-cinemas.jpg",
     city: "alexandria",
   },
   {
@@ -36,7 +36,7 @@ const cinemas = [
     price: 180,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/vox-cinemas.jpg",
+    image: "../images/Cinemas/vox-cinemas.jpg",
     city: "giza",
   },
   {
@@ -46,7 +46,7 @@ const cinemas = [
     price: 100,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/odeon-cinema.jpg",
+    image: "../images/Cinemas/odeon-cinema.jpg",
     city: "cairo",
   },
   {
@@ -56,7 +56,7 @@ const cinemas = [
     price: 110,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/metro-cinema.jpg",
+    image: "../images/Cinemas/metro-cinema.jpg",
     city: "cairo",
   },
   {
@@ -66,7 +66,7 @@ const cinemas = [
     price: 60,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/diana-cinema.jpg",
+    image: "../images/Cinemas/diana-cinema.jpg",
     city: "cairo",
   },
   {
@@ -76,7 +76,7 @@ const cinemas = [
     price: 200,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/point90-cinema.jpg",
+    image: "../images/Cinemas/point90-cinema.jpg",
     city: "cairo",
   },
   {
@@ -86,7 +86,7 @@ const cinemas = [
     price: 180,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/GalaxyElmanial-cinema.jpg",
+    image: "../images/Cinemas/GalaxyElmanial-cinema.jpg",
     city: "cairo",
   },
   {
@@ -96,7 +96,7 @@ const cinemas = [
     price: 120,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/GalaxyElmaadi-cinema.jpg",
+    image: "../images/Cinemas/GalaxyElmaadi-cinema.jpg",
     city: "cairo",
   },
   {
@@ -106,7 +106,7 @@ const cinemas = [
     price: 200,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/photo.jpg",
+    image: "../images/Cinemas/photo.jpg",
     city: "giza",
   },
   {
@@ -116,7 +116,7 @@ const cinemas = [
     price: 100,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/photo.jpg",
+    image: "../images/Cinemas/photo.jpg",
     city: "giza",
   },
   {
@@ -126,7 +126,7 @@ const cinemas = [
     price: 75,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/SunCity-cinema.jpg",
+    image: "../images/Cinemas/SunCity-cinema.jpg",
     city: "cairo",
   },
   {
@@ -136,7 +136,7 @@ const cinemas = [
     price: 170,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/Elzamalek-cinema.jpg",
+    image: "../images/Cinemas/Elzamalek-cinema.jpg",
     city: "cairo",
   },
   {
@@ -146,7 +146,7 @@ const cinemas = [
     price: 100,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/CairoFestival-cinema.jpg",
+    image: "../images/Cinemas/CairoFestival-cinema.jpg",
     city: "cairo",
   },
   {
@@ -156,7 +156,7 @@ const cinemas = [
     price: 200,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/Almasa-Cinema.jpg",
+    image: "../images/Cinemas/Almasa-Cinema.jpg",
     city: "cairo",
   },
   {
@@ -166,7 +166,7 @@ const cinemas = [
     price: 170,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/photo.jpg",
+    image: "../images/Cinemas/photo.jpg",
     city: "giza",
   },
   {
@@ -176,7 +176,7 @@ const cinemas = [
     price: 170,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/NileCity-cinema.jpg",
+    image: "../images/Cinemas/NileCity-cinema.jpg",
     city: "cairo",
   },
   {
@@ -186,7 +186,7 @@ const cinemas = [
     price: 190,
     minPeople: 2,
     duration: 3,
-    image: "../images/cinemas/GoldenStars-cinema.jpg",
+    image: "../images/Cinemas/GoldenStars-cinema.jpg",
     city: "cairo",
   },
 ];
