@@ -20,14 +20,14 @@ export default function Output({ plan }) {
           }, {}),
         ).map(([category, items]) => {
           const isExpanded = expanded[category];
-          const visibleItems = isExpanded ? items : items.slice(0, 6);
+          const visibleItems = isExpanded ? items : items.slice(0, 3);
 
           return (
             <div className="category-card" key={category}>
               <div className="category-header">
                 <h2>{category}</h2>
 
-                {items.length > 6 && (
+                {items.length > 3 && (
                   <button
                     className="view-more-btn"
                     onClick={() =>
