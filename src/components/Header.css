@@ -58,10 +58,6 @@
     display: flex;
     flex-direction: row;
   }
-  .middle-buttons button {
-    /* padding: 20px; */
-
-  }
   .title{
     border-bottom: black inset 2px;
     width: 100%;

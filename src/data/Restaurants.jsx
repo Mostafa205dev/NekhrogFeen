@@ -6,7 +6,7 @@ const restaurants = [
     price: 150,
     minPeople: 1,
     duration: 1,
-    image:"../images/Restaurant/KFC.png",
+    image:"..../images/Restaurant/KFC.png",
     city: "cairo"|| "alexandria",
   },
   {
