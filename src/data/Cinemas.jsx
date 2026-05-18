@@ -156,7 +156,7 @@ const cinemas = [
     price: 200,
     minPeople: 2,
     duration: 3,
-    image: "../images/Cinemas/Almasa-Cinema.jpg",
+    image: "../images/Cinemas/Almasa-cinema.jpg",
     city: "cairo",
   },
   {
