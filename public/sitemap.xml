@@ -1,0 +1,13 @@
+categories.forEach((category) => {
+  const categoryPlaces = filtered.filter((p) => p.category === category);
+  const affordable = categoryPlaces.filter(
+    (p) => p.price <= remainingBudget && p.duration <= remainingTime
+  );
+
+  if (affordable.length > 0) {
+    const cheapest = affordable.reduce((a, b) => a.price < b.price ? a : b);
+    result.push(...affordable);
+    remainingBudget -= cheapest.price;
+    remainingTime -= cheapest.duration;
+  }
+});
