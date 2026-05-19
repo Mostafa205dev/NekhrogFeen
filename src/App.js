@@ -1,11 +1,25 @@
-
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TripPlanner from './pages/TripPlanner';
+import SavedTrips from './pages/SavedTrips';
+import MyAccount from './pages/MyAccount';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
 function App() {
   return (
-    <div className="App">
-      <TripPlanner />
-    </div>
+    <Router>
+      <Header />
+      <main style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<TripPlanner />} />
+          <Route path="/savedTrips" element={<SavedTrips />} />
+          <Route path="/myAccount" element={<MyAccount />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

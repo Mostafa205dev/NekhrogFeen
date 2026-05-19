@@ -12,26 +12,31 @@
   font-weight: bold;
   color: rgb(55, 55, 241);
 }
-.middle-buttons button {
+.middle-buttons{
+    display: flex;
+    flex-direction: row;
+  }
+.middle-buttons a {
   border: none;
   background: transparent;
   cursor: pointer;
   position: relative;
-  color: rgb(55, 55, 241);
-  padding:10px;
+  color: black;
+  padding: 0 10px 0 10px;
+  text-decoration: none;
 }
-.middle-buttons button p {
-  margin: 0;
+.middle-buttons a p {
   font-size: 16px;
+  padding: 10px;
 }
-.middle-buttons button.active::after {
+.middle-buttons a.active::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 6px;
   width: 100%;
   height: 2px;
-  background-color: rgb(55, 55, 241);; 
+  background-color: rgb(55, 55, 241); 
 }
 
 
@@ -54,11 +59,9 @@
     align-items: center;
     gap: 10px
   }
-  .middle-buttons{
-    display: flex;
-    flex-direction: row;
-  }
+  
   .title{
+    text-align: center;
     border-bottom: black inset 2px;
     width: 100%;
   }

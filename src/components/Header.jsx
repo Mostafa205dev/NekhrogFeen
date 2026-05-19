@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
-  const [active, setActive] = useState("discover");
+  const location = useLocation();
 
   return (
     <div className="header-container">
@@ -11,30 +11,20 @@ export default function Header() {
       </header>
 
       <div className="middle-buttons">
-        <button
-          onClick={() => setActive("discover")}
-          className={active === "discover" ? "active" : ""}
-        >
+        <Link to="/" className={location.pathname === "/" ? "active" : ""}>
           <p>Discover</p>
-        </button>
+        </Link>
 
-        <button
-          onClick={() => setActive("saved")}
-          className={active === "saved" ? "active" : ""}
-        >
+        <Link to="/savedTrips" className={location.pathname === "/savedTrips" ? "active" : ""}>
           <p>Saved Trips</p>
-        </button>
+        </Link>
 
-        <button
-          onClick={() => setActive("account")}
-          className={active === "account" ? "active" : ""}
-        >
+        <Link to="/myAccount" className={location.pathname === "/myAccount" ? "active" : ""}>
           <p>My Account</p>
-        </button>
+        </Link>
       </div>
 
       <button className="join"><p>Start Journey</p></button>
     </div>
   );
 }
-

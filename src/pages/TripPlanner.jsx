@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./TripPlanner.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Labels from "../components/Labels";
 import Output from "../components/Output";
 import Description from "../components/Description";
@@ -15,40 +13,37 @@ export default function TripPlanner() {
   const [plan, setPlan] = useState([]);
 
   function generatePlan() {
-  let remainingTime = Number(time);
-  let remainingBudget = Number(budget);
+    let remainingTime = Number(time);
+    let remainingBudget = Number(budget);
 
-  const result = [];
-  const filtered = places.filter((p) =>
-    p.city === "all" || p.city === city
-  );
+    const result = [];
+    const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
-  const categories = [...new Set(filtered.map((p) => p.category))];
+    const categories = [...new Set(filtered.map((p) => p.category))];
 
-  for (let category of categories) {
-    const categoryPlaces = filtered.filter((p) => p.category === category);
+    for (let category of categories) {
+      const categoryPlaces = filtered.filter((p) => p.category === category);
 
-    const affordable = categoryPlaces.filter(
-      (p) => p.price <= remainingBudget && p.duration <= remainingTime
-    );
-
-    if (affordable.length > 0) {
-      const cheapest = affordable.reduce((a, b) =>
-        a.price < b.price ? a : b
+      const affordable = categoryPlaces.filter(
+        (p) => p.price <= remainingBudget && p.duration <= remainingTime,
       );
 
-      result.push(...affordable);
-      remainingBudget -= cheapest.price;
-      remainingTime -= cheapest.duration;
-    }
-  }
+      if (affordable.length > 0) {
+        const cheapest = affordable.reduce((a, b) =>
+          a.price < b.price ? a : b,
+        );
 
-  setPlan(result);
-}
+        result.push(...affordable);
+        remainingBudget -= cheapest.price;
+        remainingTime -= cheapest.duration;
+      }
+    }
+
+    setPlan(result);
+  }
 
   return (
     <div className="main">
-      <Header />
       <div className="body">
         <Description />
 
@@ -65,9 +60,7 @@ export default function TripPlanner() {
 
         <button onClick={generatePlan}>Generate Plan</button>
 
-        <Output plan={plan} />
-
-        <Footer />
+        {plan.length > 0 && <Output plan={plan} />}
       </div>
     </div>
   );
