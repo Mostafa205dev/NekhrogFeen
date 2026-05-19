@@ -21,9 +21,8 @@ export default function TripPlanner() {
 
     const categories = [...new Set(filtered.map((p) => p.category))];
 
-    for (let category of categories) {
+    categories.forEach((category) => {
       const categoryPlaces = filtered.filter((p) => p.category === category);
-
       const affordable = categoryPlaces.filter(
         (p) => p.price <= remainingBudget && p.duration <= remainingTime,
       );
@@ -32,12 +31,11 @@ export default function TripPlanner() {
         const cheapest = affordable.reduce((a, b) =>
           a.price < b.price ? a : b,
         );
-
         result.push(...affordable);
         remainingBudget -= cheapest.price;
         remainingTime -= cheapest.duration;
       }
-    }
+    });
 
     setPlan(result);
   }
