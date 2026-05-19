@@ -7,7 +7,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/KFC.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "McDonald's",
@@ -17,7 +17,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/MAC.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Burger King",
@@ -27,7 +27,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/BurgerKing.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Bazooka",
@@ -37,7 +37,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/Bazzoka.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Cook Door",
@@ -47,7 +47,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/CookDoor.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Mo'men",
@@ -57,7 +57,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/Momen.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Pizza Hut",
@@ -67,7 +67,7 @@ const restaurants = [
     minPeople: 2,
     duration: 1,
     image:"../images/Restaurant/PizzaHut.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Papa John's",
@@ -77,7 +77,7 @@ const restaurants = [
     minPeople: 2,
     duration: 1,
     image:"../images/Restaurant/Papa.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Abou El Sid",
@@ -87,7 +87,7 @@ const restaurants = [
     minPeople: 2,
     duration: 2,
     image:"../images/Restaurant/abou-el-sid.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Felfela",
@@ -97,7 +97,7 @@ const restaurants = [
     minPeople: 2,
     duration: 2,
     image:"../images/Restaurant/Felfela.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Zooba",
@@ -107,7 +107,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/Zooba.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Koshary Abou Tarek",
@@ -117,7 +117,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/AboTarek.png",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
 
   {
@@ -128,7 +128,7 @@ const restaurants = [
     minPeople: 2,
     duration: 2,
     image:"../images/Restaurant/TikkaGrill.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Balbaa Village",
@@ -138,7 +138,7 @@ const restaurants = [
     minPeople: 2,
     duration: 2,
     image:"../images/Restaurant/BalbaaVillage.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "White & Blue",
@@ -148,7 +148,7 @@ const restaurants = [
     minPeople: 2,
     duration: 2,
     image:"../images/Restaurant/White&Blue.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
   {
     name: "Gad Restaurant",
@@ -158,7 +158,7 @@ const restaurants = [
     minPeople: 1,
     duration: 1,
     image:"../images/Restaurant/GadRestaurant.jpg",
-    city: "cairo"|| "alexandria",
+    city: "all",
   },
 ];
 export default restaurants;

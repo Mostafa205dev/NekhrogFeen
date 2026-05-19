@@ -15,32 +15,36 @@ export default function TripPlanner() {
   const [plan, setPlan] = useState([]);
 
   function generatePlan() {
-    let remainingTime = time;
-    let remainingBudget = budget;
+  let remainingTime = Number(time);
+  let remainingBudget = Number(budget);
 
-    const result = [];
+  const result = [];
+  const filtered = places.filter((p) =>
+    p.city === "all" || p.city === city
+  );
 
-    const filtered = places.filter((p) => p.city === city);
+  const categories = [...new Set(filtered.map((p) => p.category))];
 
-    const categories = [...new Set(filtered.map((p) => p.category))];
+  for (let category of categories) {
+    const categoryPlaces = filtered.filter((p) => p.category === category);
 
-    for (let category of categories) {
-      const categoryPlaces = filtered.filter((p) => p.category === category);
-      
-      const minDuration = Math.min(...categoryPlaces.map((p) => p.duration));
+    const affordable = categoryPlaces.filter(
+      (p) => p.price <= remainingBudget && p.duration <= remainingTime
+    );
 
-      const minPrice = Math.min(...categoryPlaces.map((p) => p.price));
+    if (affordable.length > 0) {
+      const cheapest = affordable.reduce((a, b) =>
+        a.price < b.price ? a : b
+      );
 
-      if (remainingTime >= minDuration && remainingBudget >= minPrice) {
-        result.push(...categoryPlaces);
-
-        remainingTime -= minDuration;
-        remainingBudget -= minPrice;
-      }
+      result.push(...affordable);
+      remainingBudget -= cheapest.price;
+      remainingTime -= cheapest.duration;
     }
-
-    setPlan(result);
   }
+
+  setPlan(result);
+}
 
   return (
     <div className="main">
