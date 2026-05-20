@@ -39,7 +39,7 @@ export default function TripPlanner() {
         />
         <button onClick={generatePlan}>Generate Plan</button>
 
-        {plan.length > 0 && <Filters plan={plan} budget={Number(budget)}/>}
+        {plan.length > 0 && <Filters plan={plan} budget={Number(budget)} time={Number(time)}/>}
       </div>
     </div>
   );

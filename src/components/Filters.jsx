@@ -11,17 +11,18 @@ const categoryMap = {
 
 const availableCategories = ["cinemas", "restaurants", "cafes", "activities"];
 
-function Filters({ plan, budget }) {
+function Filters({ plan, budget, time }) {
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
-  // const [show, setShow] = useState(false);
   const [tripItems, setTripItems] = useState([]);
+
   useEffect(() => {
     setSelected(["all"]);
     setExpanded({});
   }, [plan]);
 
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
+  const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
 
   function handleCheck(category) {
     if (category === "all") {
@@ -116,16 +117,20 @@ function Filters({ plan, budget }) {
                         <button
                           onClick={() => {
                             if (totalPrice + item.price <= budget) {
-                              setTripItems([
-                                ...tripItems,
-                                {
-                                  name: item.name,
-                                  price: item.price,
-                                  duration: item.duration,
-                                },
-                              ]);
+                              if (totalTime + item.duration <= time) {
+                                setTripItems([
+                                  ...tripItems,
+                                  {
+                                    name: item.name,
+                                    price: item.price,
+                                    duration: item.duration,
+                                  },
+                                ]);
+                              } else {
+                                alert("Time exceeded!");
+                              }
                             } else {
-                              alert("Budget exceeded!");
+                              alert("Budget exceeded! ");
                             }
                           }}
                         >
@@ -140,7 +145,7 @@ function Filters({ plan, budget }) {
           );
         })}
       </div>
-      <AddToTrip tripItems={tripItems} budget={budget} />
+      <AddToTrip tripItems={tripItems} budget={budget} time={time} />
     </div>
   );
 }

@@ -1,22 +1,23 @@
 import "./AddToTrip.css";
 // import { useState } from "react";
-function AddToTrip({ tripItems, budget }) {
+function AddToTrip({ tripItems, budget, time }) {
+  const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
-  const totalPrice = tripItems.reduce(
-    (sum, item) => sum + item.price,
-    0
-  );
+  const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
+
+  const remainingTime = time - totalTime;
 
   const remainingBudget = budget - totalPrice;
 
   return (
     <div className="addtoTrip">
-
-      <h2>Remaining: {remainingBudget} EGP</h2>
+      <div>
+        <h3>MoneyLeft: {remainingBudget}EGP</h3>
+        <h3>TimeLeft: {remainingTime}Hours</h3>
+      </div>
 
       {tripItems.map((item, index) => (
         <div className="item" key={index}>
-
           <p>
             {index + 1} - {item.name}
           </p>
@@ -25,10 +26,8 @@ function AddToTrip({ tripItems, budget }) {
             <p>{item.price} EGP</p>
             <p>{item.duration} Hours</p>
           </div>
-
         </div>
       ))}
-
     </div>
   );
 }
