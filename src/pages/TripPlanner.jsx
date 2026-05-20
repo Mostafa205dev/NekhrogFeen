@@ -72,7 +72,7 @@ export default function TripPlanner() {
 
         <div className="test">
           <div className="test2">
-            {plan.length >= 0 && (
+            {plan.length > 0 && (
               <Filters selected={selected} setSelected={setSelected} />
             )}
 

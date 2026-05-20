@@ -1,6 +1,6 @@
 .addtoTrip{
     
-    max-width: 300px;
+    min-width: 300px;
     min-height: fit-content;
     background-color: white;
     border-radius: 20px;
