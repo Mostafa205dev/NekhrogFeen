@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
 import "./Header.css";
 
 export default function Header() {
@@ -7,6 +8,7 @@ export default function Header() {
   return (
     <div className="header-container">
       <header className="title">
+        <FaLocationDot className="logo-icon" />
         <h2>NekhrogFeen</h2>
       </header>
 

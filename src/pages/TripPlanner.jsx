@@ -3,7 +3,6 @@ import "./TripPlanner.css";
 import Labels from "../components/Labels";
 import Description from "../components/Description";
 import places from "../data/Places";
-
 import Filters from "../components/Filters";
 import Output from "../components/Output";
 import AddToTrip from "../components/AddToTrip";
@@ -54,7 +53,16 @@ export default function TripPlanner() {
 
   return (
     <div className="main">
-      <div className="body">
+      <div
+        className="body"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/Background.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <Description />
 
         <Labels
@@ -68,14 +76,13 @@ export default function TripPlanner() {
           setCity={setCity}
         />
 
+        {plan.length > 0 && (
+          <Filters selected={selected} setSelected={setSelected} />
+        )}
         <button onClick={generatePlan}>Generate Plan</button>
 
         <div className="test">
           <div className="test2">
-            {plan.length > 0 && (
-              <Filters selected={selected} setSelected={setSelected} />
-            )}
-
             {plan.length > 0 && (
               <Output
                 grouped={grouped}
