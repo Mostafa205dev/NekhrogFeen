@@ -1,5 +1,5 @@
 .filternav{
-    min-width: fit-content;
+    width: fit-content;
     min-height: fit-content;
     background-color: aliceblue;
     display: flex;
@@ -20,29 +20,7 @@
     gap: 10px;
 }
 
-.leftdiv{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
 
-
-/* Plan */
-.Output{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    align-items: center;
-}
-.Output > h2{
-    font-size: 24px;
-    color: #222;
-    justify-content: start;
-    text-align: start;
-}
 
 
 

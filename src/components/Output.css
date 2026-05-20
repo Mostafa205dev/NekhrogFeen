@@ -7,6 +7,8 @@
     justify-content: center;
     gap: 20px;
     width: 100%;
+
+
 }
 
 .category-card{
@@ -37,8 +39,7 @@
     overflow: hidden;
     position: relative;
     background: white;
-    /* width: 100%; */
-    width: 320px;
+    width: 250px;
     max-height: 300px;
     display: flex;
     flex-direction: column;
@@ -83,7 +84,7 @@
 
 .view-more-btn {
   border: none;
-  background: #0077ff;
+  background: #2200ff;
   color: white;
   padding: 8px 14px;
   border-radius: 10px;

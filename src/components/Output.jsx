@@ -9,15 +9,9 @@ function Output({
   budget,
   time,
 }) {
-  const totalPrice = tripItems.reduce(
-    (sum, item) => sum + item.price,
-    0
-  );
+  const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
-  const totalTime = tripItems.reduce(
-    (sum, item) => sum + item.duration,
-    0
-  );
+  const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
 
   function addToTrip(item) {
     if (totalPrice + item.price <= budget) {
@@ -43,18 +37,12 @@ function Output({
       {Object.entries(grouped).map(([category, items]) => {
         const isExpanded = expanded[category];
 
-        const visibleItems = isExpanded
-          ? items
-          : items.slice(0, 3);
+        const visibleItems = isExpanded ? items : items.slice(0, 3);
 
         return (
           <div className="category-card" key={category}>
             <div className="category-header">
-              <h2>
-                {category.charAt(0).toUpperCase() +
-                  category.slice(1)}
-                s
-              </h2>
+              <h2>{category.charAt(0).toUpperCase() + category.slice(1)}s</h2>
 
               {items.length > 3 && (
                 <button
@@ -66,9 +54,7 @@ function Output({
                     })
                   }
                 >
-                  {isExpanded
-                    ? "View Less"
-                    : "View More"}
+                  {isExpanded ? "View Less" : "View More"}
                 </button>
               )}
             </div>
@@ -84,15 +70,10 @@ function Output({
                     <div>
                       <p>
                         💰 {item.price} EGP
-                        <br />
-                        ⏰ {item.duration} Hours
+                        <br />⏰ {item.duration} Hours
                       </p>
 
-                      <button
-                        onClick={() => addToTrip(item)}
-                      >
-                        +
-                      </button>
+                      <button onClick={() => addToTrip(item)}>+</button>
                     </div>
                   </div>
                 </div>

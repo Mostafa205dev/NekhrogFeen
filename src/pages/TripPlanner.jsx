@@ -28,15 +28,13 @@ export default function TripPlanner() {
   const [tripItems, setTripItems] = useState([]);
 
   function generatePlan() {
-    const filtered = places.filter(
-      (p) => p.city === "all" || p.city === city
-    );
+    const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
     const result = filtered.filter(
       (p) =>
         p.price <= Number(budget) &&
         p.duration <= Number(time) &&
-        p.minPeople <= Number(gang)
+        p.minPeople <= Number(gang),
     );
 
     setPlan(result);
@@ -45,7 +43,7 @@ export default function TripPlanner() {
   const filteredPlan = selected.includes("all")
     ? plan
     : plan.filter((p) =>
-        selected.map((s) => categoryMap[s]).includes(p.category)
+        selected.map((s) => categoryMap[s]).includes(p.category),
       );
 
   const grouped = filteredPlan.reduce((groups, place) => {
@@ -72,30 +70,33 @@ export default function TripPlanner() {
 
         <button onClick={generatePlan}>Generate Plan</button>
 
-        {plan.length > 0 && (
-          <>
-            <Filters
-              selected={selected}
-              setSelected={setSelected}
-            />
+        <div className="test">
+          <div className="test2">
+            {plan.length >= 0 && (
+              <Filters selected={selected} setSelected={setSelected} />
+            )}
 
-            <Output
-              grouped={grouped}
-              expanded={expanded}
-              setExpanded={setExpanded}
-              tripItems={tripItems}
-              setTripItems={setTripItems}
-              budget={Number(budget)}
-              time={Number(time)}
-            />
+            {plan.length > 0 && (
+              <Output
+                grouped={grouped}
+                expanded={expanded}
+                setExpanded={setExpanded}
+                tripItems={tripItems}
+                setTripItems={setTripItems}
+                budget={Number(budget)}
+                time={Number(time)}
+              />
+            )}
+          </div>
 
+          {plan.length > 0 && (
             <AddToTrip
               tripItems={tripItems}
               budget={Number(budget)}
               time={Number(time)}
             />
-          </>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

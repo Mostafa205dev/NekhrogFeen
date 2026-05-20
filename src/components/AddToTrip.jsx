@@ -1,5 +1,6 @@
 import "./AddToTrip.css";
-// import { useState } from "react";
+
+
 function AddToTrip({ tripItems, budget, time }) {
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
@@ -28,6 +29,7 @@ function AddToTrip({ tripItems, budget, time }) {
           </div>
         </div>
       ))}
+      <button>Confirm</button>
     </div>
   );
 }
