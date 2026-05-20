@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Filters.css";
+import AddToTrip from "./AddToTrip";
 
 const categoryMap = {
   cinemas: "cinema",
@@ -10,14 +11,17 @@ const categoryMap = {
 
 const availableCategories = ["cinemas", "restaurants", "cafes", "activities"];
 
-function Filters({ plan }) {
+function Filters({ plan, budget }) {
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
-
+  // const [show, setShow] = useState(false);
+  const [tripItems, setTripItems] = useState([]);
   useEffect(() => {
     setSelected(["all"]);
     setExpanded({});
   }, [plan]);
+
+  const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
   function handleCheck(category) {
     if (category === "all") {
@@ -42,7 +46,9 @@ function Filters({ plan }) {
 
   const filteredPlan = selected.includes("all")
     ? plan
-    : plan.filter((p) => selected.map((s) => categoryMap[s]).includes(p.category));
+    : plan.filter((p) =>
+        selected.map((s) => categoryMap[s]).includes(p.category),
+      );
 
   const grouped = filteredPlan.reduce((groups, place) => {
     if (!groups[place.category]) groups[place.category] = [];
@@ -102,10 +108,30 @@ function Filters({ plan }) {
                     <img src={item.image} alt="" />
                     <div className="itemDiscription">
                       <h3>{item.name}</h3>
-                      <p>
-                        💰 {item.price} EGP
-                        <br />⏰ {item.duration} Hours
-                      </p>
+                      <div>
+                        <p>
+                          💰 {item.price} EGP
+                          <br />⏰ {item.duration} Hours
+                        </p>
+                        <button
+                          onClick={() => {
+                            if (totalPrice + item.price <= budget) {
+                              setTripItems([
+                                ...tripItems,
+                                {
+                                  name: item.name,
+                                  price: item.price,
+                                  duration: item.duration,
+                                },
+                              ]);
+                            } else {
+                              alert("Budget exceeded!");
+                            }
+                          }}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -114,6 +140,7 @@ function Filters({ plan }) {
           );
         })}
       </div>
+      <AddToTrip tripItems={tripItems} budget={budget} />
     </div>
   );
 }

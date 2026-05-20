@@ -1,0 +1,32 @@
+.addtoTrip{
+    position: fixed;
+    right: -10px;
+    top: 290px;
+    max-width: 200px;
+    min-height: 200px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+    align-self: center;
+    z-index: 99999;
+
+}
+.addtoTrip .item{
+    display: flex;
+    flex-direction: column;
+}
+
+.addtoTrip .item .discription{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:600px) {
+    .addtoTrip{
+        display: none;
+    }
+}

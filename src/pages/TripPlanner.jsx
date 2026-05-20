@@ -4,7 +4,7 @@ import Labels from "../components/Labels";
 import Description from "../components/Description";
 import places from "../data/Places";
 import Filters from "../components/Filters";
-
+// import AddToTrip from "../components/AddToTrip";
 export default function TripPlanner() {
   const [budget, setBudget] = useState("800");
   const [time, setTime] = useState("8");
@@ -39,7 +39,7 @@ export default function TripPlanner() {
         />
         <button onClick={generatePlan}>Generate Plan</button>
 
-        {plan.length > 0 && <Filters plan={plan} />}
+        {plan.length > 0 && <Filters plan={plan} budget={Number(budget)}/>}
       </div>
     </div>
   );
