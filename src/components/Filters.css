@@ -1,3 +1,32 @@
+.filternav{
+    min-width: fit-content;
+    min-height: fit-content;
+    background-color: aliceblue;
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom:10px ;
+    gap: 30px;
+    box-shadow: 0 4px 10px rgba(202, 41, 41, 0.555);
+    border-radius: 20px;
+}
+
+
+.filternav .option{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.leftdiv{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
 /* Plan */
 .output{
     display: flex;
@@ -25,8 +54,6 @@
 }
 
 .category-card{
-    /* min-width: 300px; */
-    /* min-height: 80px; */
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -66,15 +93,12 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.827);
 }
 .itemDiscription{
-    /* position: relative; */
     padding: 10px;
-    /* gap: 200px; */
 }
 .place-item img{
     width: 100%;
     height: 60%;
     border-radius: 15px 15px  0  0 ;
-    /* height: 100px; */
 }
 
 
@@ -106,10 +130,7 @@
 
 @media (max-width:600px) {
     .category-header{
-        /* display: flex; */
-        /* flex-direction: row; */
         justify-content: center;
-        /* align-items: center; */
         gap: 90px;
     }
 
@@ -124,4 +145,13 @@
         height: 150px;
     }
 
+
+    .sideboxes{
+        display: none;
+    }
+
+    .filternav{
+        gap: 10px;
+    }
 }
+

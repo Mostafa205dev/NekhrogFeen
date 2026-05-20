@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./TripPlanner.css";
 import Labels from "../components/Labels";
-import Output from "../components/Output";
+// import Output from "../components/Output";
 import Description from "../components/Description";
 import places from "../data/Places";
+import Filters from "../components/Filters";
 
 export default function TripPlanner() {
   const [budget, setBudget] = useState("800");
@@ -18,7 +19,6 @@ export default function TripPlanner() {
 
     const result = [];
     const filtered = places.filter((p) => p.city === "all" || p.city === city);
-
     const categories = [...new Set(filtered.map((p) => p.category))];
 
     categories.forEach((category) => {
@@ -55,10 +55,9 @@ export default function TripPlanner() {
           city={city}
           setCity={setCity}
         />
-
         <button onClick={generatePlan}>Generate Plan</button>
 
-        {plan.length > 0 && <Output plan={plan} />}
+        {plan.length > 0 && <Filters plan={plan} />}
       </div>
     </div>
   );
