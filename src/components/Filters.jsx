@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Filters.css";
 
+const categoryMap = {
+  cinemas: "cinema",
+  restaurants: "restaurant",
+  cafes: "cafe",
+  activities: "activity",
+};
+
+const availableCategories = ["cinemas", "restaurants", "cafes", "activities"];
 
 function Filters({ plan }) {
   const [selected, setSelected] = useState(["all"]);
@@ -32,11 +40,9 @@ function Filters({ plan }) {
     }
   }
 
-  const availableCategories = [...new Set(plan.map((p) => p.category))];
-
   const filteredPlan = selected.includes("all")
     ? plan
-    : plan.filter((p) => selected.includes(p.category));
+    : plan.filter((p) => selected.map((s) => categoryMap[s]).includes(p.category));
 
   const grouped = filteredPlan.reduce((groups, place) => {
     if (!groups[place.category]) groups[place.category] = [];
@@ -58,7 +64,7 @@ function Filters({ plan }) {
         </label>
         {availableCategories.map((category) => (
           <label key={category} className="option">
-            <p>{category.charAt(0).toUpperCase() + category.slice(1)}s</p>
+            <p>{category.charAt(0).toUpperCase() + category.slice(1)}</p>
             <input
               type="checkbox"
               checked={selected.includes(category)}
@@ -77,7 +83,7 @@ function Filters({ plan }) {
           return (
             <div className="category-card" key={category}>
               <div className="category-header">
-                <h2>{category}s</h2>
+                <h2>{category.charAt(0).toUpperCase() + category.slice(1)}s</h2>
                 {items.length > 3 && (
                   <button
                     className="view-more-btn"

@@ -16,7 +16,7 @@ export default function TripPlanner() {
     const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
     const result = filtered.filter(
-      (p) => p.price <= Number(budget) && p.duration <= Number(time),
+      (p) => p.price <= Number(budget) && p.duration <= Number(time) && p.minPeople <= Number(gang),
     );
 
     setPlan(result);
