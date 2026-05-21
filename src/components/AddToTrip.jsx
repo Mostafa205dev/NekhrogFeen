@@ -12,7 +12,7 @@ function AddToTrip({ tripItems, budget, time }) {
 
   return (
     <div className="addtoTrip">
-      <div>
+      <div className="leftthings">
         <h3>MoneyLeft: {remainingBudget}EGP</h3>
         <h3>TimeLeft: {remainingTime}Hours</h3>
       </div>

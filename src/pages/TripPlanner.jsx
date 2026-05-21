@@ -76,10 +76,11 @@ export default function TripPlanner() {
           setCity={setCity}
         />
 
+        <button onClick={generatePlan}>Generate Plan</button>
+
         {plan.length > 0 && (
           <Filters selected={selected} setSelected={setSelected} />
         )}
-        <button onClick={generatePlan}>Generate Plan</button>
 
         <div className="test">
           <div className="test2">

@@ -1,17 +1,19 @@
 .addtoTrip{
-    
+        
     min-width: 300px;
-    min-height: fit-content;
+    min-height: 300px;
     background-color: white;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 0 5px rgba(53, 53, 53, 0.385);
 
 }
+
 .addtoTrip .item{
     display: flex;
     flex-direction: column;
