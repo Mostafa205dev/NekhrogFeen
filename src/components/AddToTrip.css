@@ -1,5 +1,4 @@
 .addtoTrip {
-    /* align-self: flex-start; */
     width: 300px;
     background-color: aliceblue;
     border-radius: 20px;
@@ -16,16 +15,48 @@
     display: flex;
     flex-direction: column;
     border-left: blue inset 5px ;
+    border-top: 1px black inset;
+    border-bottom: 1px black inset;
     border-radius: 20px;
     padding: 20px;
     width: 100%;
+    gap: 5px;
 }
-.addtoTrip button{
+.addtoTrip > button{
     background-color: black;
 }
 .addtoTrip .item .discription{
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+.addtoTrip .item p{
+    padding: 5px;
+    border-radius: 20px;
+}
+.addtoTrip .item .discription p:nth-child(1) {
+    /* background-color: rgba(0, 128, 0, 0.511); */
+    color: green;
+    border: green 2px inset;
+    
+}
+
+.addtoTrip .item .discription p:nth-child(2) {
+    /* box-shadow: 0 0 5px rgba(53, 53, 53, 0.385); */
+    border: red 2px inset;
+    color: red;
+    
+}
+.addtoTrip .item .discription button {
+    box-shadow: 0 0 5px rgba(53, 53, 53, 0.385);
+    background-color: aliceblue;
+    color: black;
+    padding:  5px;
+}
+
+.discription{
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width:600px) {

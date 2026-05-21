@@ -1,7 +1,6 @@
 import "./AddToTrip.css";
 
-
-function AddToTrip({ tripItems, budget, time }) {
+function AddToTrip({ tripItems, budget, time , setTripItems}) {
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
   const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
@@ -9,6 +8,10 @@ function AddToTrip({ tripItems, budget, time }) {
   const remainingTime = time - totalTime;
 
   const remainingBudget = budget - totalPrice;
+
+  function removeItem(index) {
+    setTripItems(tripItems.filter((_, i) => i !== index));
+  }
 
   return (
     <div className="addtoTrip">
@@ -25,7 +28,8 @@ function AddToTrip({ tripItems, budget, time }) {
 
           <div className="discription">
             <p>{item.price} EGP</p>
-            <p>{item.duration} Hours</p>
+            <p>⏲{item.duration} Hours</p>
+            <button onClick={() => removeItem(index)}>x</button>
           </div>
         </div>
       ))}

@@ -25,7 +25,7 @@ export default function TripPlanner() {
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
   const [tripItems, setTripItems] = useState([]);
-
+  
   function generatePlan() {
     const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
@@ -98,6 +98,7 @@ export default function TripPlanner() {
           {plan.length > 0 && (
             <AddToTrip
               tripItems={tripItems}
+              setTripItems={setTripItems} 
               budget={Number(budget)}
               time={Number(time)}
             />
