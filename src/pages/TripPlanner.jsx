@@ -83,19 +83,17 @@ export default function TripPlanner() {
         )}
 
         <div className="test">
-          <div className="test2">
-            {plan.length > 0 && (
-              <Output
-                grouped={grouped}
-                expanded={expanded}
-                setExpanded={setExpanded}
-                tripItems={tripItems}
-                setTripItems={setTripItems}
-                budget={Number(budget)}
-                time={Number(time)}
-              />
-            )}
-          </div>
+          {plan.length > 0 && (
+            <Output
+              grouped={grouped}
+              expanded={expanded}
+              setExpanded={setExpanded}
+              tripItems={tripItems}
+              setTripItems={setTripItems}
+              budget={Number(budget)}
+              time={Number(time)}
+            />
+          )}
 
           {plan.length > 0 && (
             <AddToTrip

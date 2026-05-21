@@ -3,13 +3,13 @@
     min-height: fit-content;
     background-color: aliceblue;
     display: flex;
-    align-items: start;
+    align-self: center;
     flex-direction: row;
     justify-content: center;
     padding: 20px;
     margin-bottom:10px ;
     gap: 30px;
-    box-shadow: 0 4px 10px rgba(202, 41, 41, 0.555);
+    box-shadow: 0 4px 10px rgb(149, 10, 219);
     border-radius: 20px;
 }
 

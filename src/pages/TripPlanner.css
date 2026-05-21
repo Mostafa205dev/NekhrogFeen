@@ -10,30 +10,21 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
 .body{
-    position: relative;
-    padding : 30px 80px 50px 80px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    background-color: aliceblue;
     width: 100%;
-    overflow: hidden;
+    padding : 30px 80px 50px 80px;
+    gap: 40px;
     min-height: 82vh;
 }
 
-.body button{
+.body  button{
     background-color: rgb(8, 8, 228);
     color: white;
     padding: 12px 15px;
+    align-self: center; 
+    max-width: fit-content;
 
     border: none;
     border-radius: 15px;
@@ -48,34 +39,14 @@ body{
 .body button:hover{
     transform: scale(1.05);
 }
-
-.test{
+.test {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    align-items: start;
     justify-content: space-around;
-    align-items: start;
-    gap: 50px;
-    
+    gap: 30px; 
 }
 
-
-.test2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.filterandplanbutton{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    gap: 50px;
-}
 
 
 @media (max-width: 600px) {

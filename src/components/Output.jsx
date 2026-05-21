@@ -33,7 +33,7 @@ function Output({
   }
 
   return (
-    <div className="result">
+    <div className="output">
       {Object.entries(grouped).map(([category, items]) => {
         const isExpanded = expanded[category];
 
