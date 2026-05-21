@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
       </div>
 
-      <button className="join"><p>Start Journey</p></button>
+      <button className="join"><p>نخرج فين ؟</p></button>
     </div>
   );
 }

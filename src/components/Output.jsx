@@ -32,6 +32,13 @@ function Output({
     }
   }
 
+  const translations = {
+    cinema: "سنيمات",
+    restaurant: "مطاعم",
+    cafe: "كافيهات",
+    activity: "أنشطة",
+  };
+
   return (
     <div className="output">
       {Object.entries(grouped).map(([category, items]) => {
@@ -42,7 +49,10 @@ function Output({
         return (
           <div className="category-card" key={category}>
             <div className="category-header">
-              <h2>{category.charAt(0).toUpperCase() + category.slice(1)}s</h2>
+              <h2>
+                {category.charAt(0).toUpperCase() + category.slice(1)}s -{" "}
+                {translations[category]}
+              </h2>
 
               {items.length > 3 && (
                 <button
