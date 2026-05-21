@@ -17,16 +17,31 @@ export default function Header() {
           <p>Discover</p>
         </Link>
 
-        <Link to="/savedTrips" className={location.pathname === "/savedTrips" ? "active" : ""}>
+        <Link
+          to="/savedTrips"
+          className={location.pathname === "/savedTrips" ? "active" : ""}
+        >
           <p>Saved Trips</p>
         </Link>
 
-        <Link to="/myAccount" className={location.pathname === "/myAccount" ? "active" : ""}>
+        <Link
+          to="/myAccount"
+          className={location.pathname === "/myAccount" ? "active" : ""}
+        >
           <p>My Account</p>
+        </Link>
+
+        <Link
+          to="/About"
+          className={location.pathname === "/About" ? "active" : ""}
+        >
+          <p>About</p>
         </Link>
       </div>
 
-      <button className="join"><p>نخرج فين ؟</p></button>
+      <button className="join">
+        <p>نخرج فين ؟</p>
+      </button>
     </div>
   );
 }

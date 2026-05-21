@@ -5,7 +5,7 @@ import SavedTrips from './pages/SavedTrips';
 import MyAccount from './pages/MyAccount';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import About from './pages/About';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<TripPlanner />} />
           <Route path="/savedTrips" element={<SavedTrips />} />
           <Route path="/myAccount" element={<MyAccount />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </main>
       <Footer />
