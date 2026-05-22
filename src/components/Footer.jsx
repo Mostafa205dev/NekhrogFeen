@@ -2,8 +2,6 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 import {
-  FaWhatsapp,
-  FaPhone,
   FaLinkedin,
   FaFacebook,
   FaGithub,
