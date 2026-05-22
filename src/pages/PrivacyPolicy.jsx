@@ -174,6 +174,7 @@ export default function PrivacyPolicy() {
         <div className="privacy-contact">
           <h2>Contact Us | تواصل معنا</h2>
           <p>For any inquiries — لأي استفسار</p>
+          <a href="mailto:mostafatarek1125@gmail.com">mostafatarek1125@gmail.com</a>
           <a href="mailto:seso63412@gmail.com">seso63412@gmail.com</a>
         </div>
 

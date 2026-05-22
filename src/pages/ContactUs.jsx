@@ -42,6 +42,7 @@ export default function ContactUs() {
           <div className="contact-info">
             <span className="contact-label-en">Email</span>
             <span className="contact-label-ar">البريد الإلكتروني</span>
+            <a href="mailto:mostafatarek1125@gmail.com" className="contact-value">mostafatarek1125@gmail.com</a>
             <a href="mailto:seso63412@gmail.com" className="contact-value">seso63412@gmail.com</a>
           </div>
         </div>
