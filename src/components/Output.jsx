@@ -1,35 +1,30 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./Output.css";
+import { useNavigate } from "react-router-dom";
+import { addToTrip } from "../store/tripSlice";
 
-function Output({
-  grouped,
-  expanded,
-  setExpanded,
-  tripItems,
-  setTripItems,
-  budget,
-  time,
-}) {
+function Output({ grouped, expanded, setExpanded, budget, time }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const tripItems = useSelector((state) => state.trip.tripItems);
+
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
   const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
 
-  function addToTrip(item) {
-    if (totalPrice + item.price <= budget) {
-      if (totalTime + item.duration <= time) {
-        setTripItems([
-          ...tripItems,
-          {
-            name: item.name,
-            price: item.price,
-            duration: item.duration,
-          },
-        ]);
-      } else {
-        alert("Time exceeded!");
-      }
-    } else {
+  function handleAdd(item) {
+    if (totalPrice + item.price > budget) {
       alert("Budget exceeded!");
+      return;
     }
+
+    if (totalTime + item.duration > time) {
+      alert("Time exceeded!");
+      return;
+    }
+
+    dispatch(addToTrip(item));
   }
 
   const translations = {
@@ -58,13 +53,10 @@ function Output({
                 <button
                   className="view-more-btn"
                   onClick={() =>
-                    setExpanded({
-                      ...expanded,
-                      [category]: !isExpanded,
-                    })
+                    navigate(`/${category}`)
                   }
                 >
-                  {isExpanded ? "View Less" : "View More"}
+                  View More
                 </button>
               )}
             </div>
@@ -83,7 +75,7 @@ function Output({
                         <br />⏰ {item.duration} Hours
                       </p>
 
-                      <button onClick={() => addToTrip(item)}>+</button>
+                      <button onClick={() => handleAdd(item)}>+</button>
                     </div>
                   </div>
                 </div>

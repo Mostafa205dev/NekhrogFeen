@@ -1,4 +1,4 @@
-.addtoTrip {
+.TripList {
     width: 300px;
     background-color: aliceblue;
     border-radius: 20px;
@@ -13,7 +13,7 @@
 
 }
 
-.addtoTrip .item{
+.TripList .item{
     display: flex;
     flex-direction: column;
     border-left: blue inset 5px ;
@@ -24,32 +24,32 @@
     width: 100%;
     gap: 5px;
 }
-.addtoTrip > button{
+.TripList > button{
     background-color: black;
 }
-.addtoTrip .item .discription{
+.TripList .item .discription{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.addtoTrip .item p{
+.TripList .item p{
     padding: 5px;
     border-radius: 20px;
 }
-.addtoTrip .item .discription p:nth-child(1) {
+.TripList .item .discription p:nth-child(1) {
     /* background-color: rgba(0, 128, 0, 0.511); */
     color: green;
     border: green 2px inset;
     
 }
 
-.addtoTrip .item .discription p:nth-child(2) {
+.TripList .item .discription p:nth-child(2) {
     /* box-shadow: 0 0 5px rgba(53, 53, 53, 0.385); */
     border: red 2px inset;
     color: red;
     
 }
-.addtoTrip .item .discription button {
+.TripList .item .discription button {
     box-shadow: 0 0 5px rgba(53, 53, 53, 0.385);
     background-color: aliceblue;
     color: black;
@@ -62,7 +62,7 @@
 }
 
 @media (max-width:600px) {
-    .addtoTrip{
+    .TripList{
         display: none;
     }
 }

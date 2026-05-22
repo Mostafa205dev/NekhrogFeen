@@ -6,8 +6,11 @@ import MyAccount from './pages/MyAccount';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './pages/About';
+import CategoryPage from './pages/CategoryPage';
+
 
 function App() {
+
   return (
     <Router>
       <Header />
@@ -17,6 +20,7 @@ function App() {
           <Route path="/savedTrips" element={<SavedTrips />} />
           <Route path="/myAccount" element={<MyAccount />} />
           <Route path="/About" element={<About />} />
+          <Route path="/:category" element={<CategoryPage />} />
         </Routes>
       </main>
       <Footer />

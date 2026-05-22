@@ -5,7 +5,9 @@ import Description from "../components/Description";
 import places from "../data/Places";
 import Filters from "../components/Filters";
 import Output from "../components/Output";
-import AddToTrip from "../components/AddToTrip";
+import TripList from "../components/TripList";
+import { useSelector , useDispatch } from "react-redux";
+import { setPlan } from "../store/planSlice";
 
 const categoryMap = {
   cinemas: "cinema",
@@ -19,13 +21,12 @@ export default function TripPlanner() {
   const [time, setTime] = useState("8");
   const [gang, setGang] = useState("5");
   const [city, setCity] = useState("cairo");
-
-  const [plan, setPlan] = useState([]);
-
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
-  const [tripItems, setTripItems] = useState([]);
-  
+  const dispatch = useDispatch();
+
+  const plan = useSelector((state) => state.plan.plan);
+
   function generatePlan() {
     const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
@@ -36,7 +37,7 @@ export default function TripPlanner() {
         p.minPeople <= Number(gang),
     );
 
-    setPlan(result);
+    dispatch(setPlan(result));
   }
 
   const filteredPlan = selected.includes("all")
@@ -88,20 +89,13 @@ export default function TripPlanner() {
               grouped={grouped}
               expanded={expanded}
               setExpanded={setExpanded}
-              tripItems={tripItems}
-              setTripItems={setTripItems}
               budget={Number(budget)}
               time={Number(time)}
             />
           )}
 
           {plan.length > 0 && (
-            <AddToTrip
-              tripItems={tripItems}
-              setTripItems={setTripItems} 
-              budget={Number(budget)}
-              time={Number(time)}
-            />
+            <TripList budget={Number(budget)} time={Number(time)} />
           )}
         </div>
       </div>
