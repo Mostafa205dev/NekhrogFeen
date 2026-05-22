@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './pages/About';
 import CategoryPage from './pages/CategoryPage';
-
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/myAccount" element={<MyAccount />} />
           <Route path="/About" element={<About />} />
           <Route path="/:category" element={<CategoryPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />

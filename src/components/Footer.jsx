@@ -1,4 +1,7 @@
 import "./Footer.css";
+import { Link } from 'react-router-dom';
+
+
 import {
   FaWhatsapp,
   FaPhone,
@@ -41,6 +44,12 @@ export default function Footer() {
         >
           <FaGithub size={25} color="#0A66C2" />
         </a>
+        <Link
+          to="/privacy-policy"
+          style={{ color: "#6b7280", fontSize: "0.85rem" }}
+        >
+         PrivacyPolicy - سياسة الخصوصية
+        </Link>
       </div>
       <h3 className="rights">Mostafa Tarek Hassanien</h3>
     </div>

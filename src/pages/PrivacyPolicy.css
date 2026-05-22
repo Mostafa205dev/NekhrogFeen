@@ -1,0 +1,163 @@
+/* src/pages/PrivacyPolicy.css */
+
+.privacy-container {
+  font-family: 'Cairo', sans-serif;
+  background: #f9f9ff;
+  min-height: 100vh;
+}
+
+.privacy-header {
+  background: #3737f1;
+  color: white;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.privacy-header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.privacy-header p {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.header-en {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.privacy-content {
+  max-width: 780px;
+  margin: 48px auto;
+  padding: 0 24px 80px;
+}
+
+.privacy-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(55, 55, 241, 0.05);
+}
+
+.privacy-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3737f1;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+  background: #eeeeff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.title-en {
+  color: #6366f1;
+  font-style: italic;
+}
+
+.title-divider {
+  color: #c7d2fe;
+}
+
+.title-ar {
+  color: #3737f1;
+}
+
+.bilingual-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid #f0f0ff;
+  padding-top: 16px;
+}
+
+.content-en {
+  direction: ltr;
+  text-align: left;
+  font-size: 0.92rem;
+  color: #6b7280;
+  border-right: 2px solid #eeeeff;
+  padding-right: 16px;
+}
+
+.content-ar {
+  direction: rtl;
+  text-align: right;
+  font-size: 0.92rem;
+  color: #374151;
+}
+
+.content-en ul,
+.content-ar ul {
+  padding: 0 16px;
+  margin: 0;
+}
+
+.content-en li,
+.content-ar li {
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+.content-en p,
+.content-ar p {
+  line-height: 1.9;
+  margin: 0;
+}
+
+.privacy-contact {
+  background: #3737f1;
+  color: white;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.privacy-contact h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.privacy-contact a {
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: block;
+  margin-top: 8px;
+}
+
+.privacy-date {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .bilingual-content {
+    grid-template-columns: 1fr;
+  }
+
+  .content-en {
+    border-right: none;
+    border-bottom: 2px solid #eeeeff;
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+}
