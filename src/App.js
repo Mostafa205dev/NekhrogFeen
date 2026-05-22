@@ -8,6 +8,9 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import CategoryPage from './pages/CategoryPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ContactUs from './pages/ContactUs';
+
+
 
 function App() {
 
@@ -22,6 +25,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/:category" element={<CategoryPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </main>
       <Footer />

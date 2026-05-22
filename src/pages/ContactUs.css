@@ -1,0 +1,102 @@
+/* src/pages/ContactUs.css */
+
+.contact-container {
+  font-family: 'Cairo', sans-serif;
+  background: #f9f9ff;
+  min-height: 100vh;
+}
+
+.contact-header {
+  background: #3737f1;
+  color: white;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.contact-header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.contact-header p {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.header-en {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.contact-content {
+  max-width: 500px;
+  margin: 48px auto;
+  padding: 0 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(55, 55, 241, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.contact-icon-wrap.phone  { background: #3737f1; }
+.contact-icon-wrap.whatsapp { background: #25D366; }
+.contact-icon-wrap.email  { background: #EA4335; }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-label-en {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  direction: ltr;
+  text-align: left;
+}
+
+.contact-label-ar {
+  font-size: 0.85rem;
+  color: #6b7280;
+  direction: rtl;
+}
+
+.contact-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3737f1;
+  text-decoration: none;
+  margin-top: 4px;
+  direction: ltr;
+}
+
+.contact-value:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 20px;
+  }
+}

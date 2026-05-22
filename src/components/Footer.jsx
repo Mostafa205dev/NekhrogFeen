@@ -1,6 +1,5 @@
 import "./Footer.css";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 import {
   FaWhatsapp,
@@ -15,14 +14,14 @@ export default function Footer() {
     <div className="footer">
       <h3 className="icon">NekhrogFeen</h3>
       <div className="links">
-        <p>
+        {/* <p>
           <FaPhone />
           01023113960
         </p>
         <p>
           <FaWhatsapp size={30} color="green" />
           01155410622
-        </p>
+        </p> */}
         <a
           href="https://www.linkedin.com/in/mostafa-tarek-448665250/"
           target="_blank"
@@ -48,7 +47,10 @@ export default function Footer() {
           to="/privacy-policy"
           style={{ color: "#6b7280", fontSize: "0.85rem" }}
         >
-         PrivacyPolicy - سياسة الخصوصية
+          PrivacyPolicy - سياسة الخصوصية
+        </Link>
+        <Link to="/contact" style={{ color: "#6b7280", fontSize: "0.85rem" }}>
+          Contact Us - اتصل بنا
         </Link>
       </div>
       <h3 className="rights">Mostafa Tarek Hassanien</h3>
