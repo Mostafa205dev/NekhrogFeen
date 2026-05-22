@@ -26,6 +26,16 @@
 }
 .TripList > button{
     background-color: black;
+    color: white;
+    padding: 12px 15px;
+    align-self: center;
+    max-width: fit-content;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 .TripList .item .discription{
     display: flex;

@@ -3,10 +3,12 @@ import "./Output.css";
 import { useNavigate } from "react-router-dom";
 import { addToTrip } from "../store/tripSlice";
 
-function Output({ grouped, expanded, setExpanded, budget, time }) {
+function Output({ grouped, expanded, setExpanded}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  
+  const budget = useSelector(state => state.trip.budget);
+  const time = useSelector(state => state.trip.time);
   const tripItems = useSelector((state) => state.trip.tripItems);
 
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);

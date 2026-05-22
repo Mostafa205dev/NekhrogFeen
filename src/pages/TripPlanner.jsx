@@ -8,6 +8,7 @@ import Output from "../components/Output";
 import TripList from "../components/TripList";
 import { useSelector , useDispatch } from "react-redux";
 import { setPlan } from "../store/planSlice";
+import { setBudget, setTime } from '../store/tripSlice';
 
 const categoryMap = {
   cinemas: "cinema",
@@ -17,8 +18,8 @@ const categoryMap = {
 };
 
 export default function TripPlanner() {
-  const [budget, setBudget] = useState("800");
-  const [time, setTime] = useState("8");
+  const [budget, setBudgetInput] = useState("800");
+  const [time, setTimeInput] = useState("8");
   const [gang, setGang] = useState("5");
   const [city, setCity] = useState("cairo");
   const [selected, setSelected] = useState(["all"]);
@@ -28,6 +29,8 @@ export default function TripPlanner() {
   const plan = useSelector((state) => state.plan.plan);
 
   function generatePlan() {
+    dispatch(setBudget(Number(budget)));
+    dispatch(setTime(Number(time)));
     const filtered = places.filter((p) => p.city === "all" || p.city === city);
 
     const result = filtered.filter(
@@ -68,9 +71,9 @@ export default function TripPlanner() {
 
         <Labels
           budget={budget}
-          setBudget={setBudget}
+          setBudget={setBudgetInput}
           time={time}
-          setTime={setTime}
+          setTime={setTimeInput}
           gang={gang}
           setGang={setGang}
           city={city}
@@ -89,13 +92,12 @@ export default function TripPlanner() {
               grouped={grouped}
               expanded={expanded}
               setExpanded={setExpanded}
-              budget={Number(budget)}
-              time={Number(time)}
+
             />
           )}
 
           {plan.length > 0 && (
-            <TripList budget={Number(budget)} time={Number(time)} />
+            <TripList/>
           )}
         </div>
       </div>

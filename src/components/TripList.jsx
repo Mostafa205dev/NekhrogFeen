@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { removeFromTrip } from "../store/tripSlice";
 
-function TripList({budget, time }) {
+function TripList() {
   const dispatch = useDispatch();
 
   const tripItems = useSelector(state => state.trip.tripItems);
+  const budget = useSelector(state => state.trip.budget);
+  const time = useSelector(state => state.trip.time);
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
 
   const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);

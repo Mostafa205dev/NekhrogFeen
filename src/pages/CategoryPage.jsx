@@ -1,5 +1,5 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useNavigate, useParams  } from "react-router-dom";
+import { useDispatch ,useSelector} from "react-redux";
 import { addToTrip } from "../store/tripSlice";
 import places from "../data/Places";
 import "./CategoryPage.css";
@@ -10,6 +10,12 @@ export default function CategoryPage() {
   const navigate = useNavigate();
   const { category } = useParams();
 
+  const budget = useSelector((state) => state.trip.budget);
+  const time = useSelector((state) => state.trip.time);
+  const tripItems = useSelector(state => state.trip.tripItems);
+  const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
+
+  const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
   const validCategories = ["cinema", "restaurant", "cafe", "activity"];
 
   // ❌ لازم أول حاجة
@@ -17,9 +23,7 @@ export default function CategoryPage() {
     return (
       <div>
         <h1>404 Not Found</h1>
-        <button onClick={() => navigate("/")}>
-          Go Home
-        </button>
+        <button onClick={() => navigate("/")}>Go Home</button>
       </div>
     );
   }
@@ -43,17 +47,24 @@ export default function CategoryPage() {
 
   const currentSEO = seoData[category] || defaultSEO;
 
-  const items = places.filter(
-    (item) => item.category === category
-  );
+  const items = places.filter((item) => item.category === category);
 
   function handleAdd(item) {
+    if (totalPrice + item.price > budget) {
+      alert("Budget exceeded!");
+      return;
+    }
+
+    if (totalTime + item.duration > time) {
+      alert("Time exceeded!");
+      return;
+    }
+
     dispatch(addToTrip(item));
   }
 
   return (
     <div className="cinemas-page">
-
       <Helmet>
         <title>{currentSEO.title}</title>
 
@@ -61,17 +72,12 @@ export default function CategoryPage() {
         <meta property="og:title" content={currentSEO.title} />
         <meta property="og:description" content={currentSEO.desc} />
 
-        <link
-          rel="canonical"
-          href={`https://nekhrogfeen.app/${category}`}
-        />
+        <link rel="canonical" href={`https://nekhrogfeen.app/${category}`} />
       </Helmet>
 
       <TripList />
 
-      <h1>
-        {category.charAt(0).toUpperCase() + category.slice(1)}
-      </h1>
+      <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
 
       <button className="home-btn" onClick={() => navigate("/")}>
         ⬅ Back to Home
@@ -87,13 +93,10 @@ export default function CategoryPage() {
             <p>💰 {item.price} EGP</p>
             <p>⏰ {item.duration} Hours</p>
 
-            <button onClick={() => handleAdd(item)}>
-              Add +
-            </button>
+            <button onClick={() => handleAdd(item)}>Add +</button>
           </div>
         ))}
       </div>
-
     </div>
   );
 }

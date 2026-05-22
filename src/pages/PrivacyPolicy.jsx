@@ -1,6 +1,5 @@
 // src/pages/PrivacyPolicy.jsx
 import "./PrivacyPolicy.css";
-import { FaWhatsapp, FaPhone } from "react-icons/fa";
 const sections = [
   {
     icon: "📋",
