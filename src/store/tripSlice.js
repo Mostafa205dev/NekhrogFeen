@@ -2,8 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   tripItems: [],
-  budget: 0,
-  time: 0,
+  budget: 800,
+  time: 8,
+  gang: 5,
+  city: "cairo",
 };
 
 const tripSlice = createSlice({
@@ -26,9 +28,22 @@ const tripSlice = createSlice({
     setTime: (state, action) => {
       state.time = action.payload;
     },
+    setGang: (state, action) => {
+      state.gang = action.payload;
+    },
+    setCity: (state, action) => {
+      state.city = action.payload;
+    },
   },
 });
 
-export const { addToTrip, removeFromTrip, setBudget, setTime } = tripSlice.actions;
+export const {
+  addToTrip,
+  removeFromTrip,
+  setBudget,
+  setTime,
+  setGang,
+  setCity,
+} = tripSlice.actions;
 
 export default tripSlice.reducer;

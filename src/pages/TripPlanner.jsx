@@ -6,9 +6,9 @@ import places from "../data/Places";
 import Filters from "../components/Filters";
 import Output from "../components/Output";
 import TripList from "../components/TripList";
-import { useSelector , useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setPlan } from "../store/planSlice";
-import { setBudget, setTime } from '../store/tripSlice';
+import { setBudget, setTime } from "../store/tripSlice";
 
 const categoryMap = {
   cinemas: "cinema",
@@ -18,20 +18,24 @@ const categoryMap = {
 };
 
 export default function TripPlanner() {
-  const [budget, setBudgetInput] = useState("800");
-  const [time, setTimeInput] = useState("8");
-  const [gang, setGang] = useState("5");
-  const [city, setCity] = useState("cairo");
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
   const dispatch = useDispatch();
+
+  const budget = useSelector((state) => state.trip.budget);
+  const time = useSelector((state) => state.trip.time);
+  const gang = useSelector((state) => state.trip.gang);
+  const city = useSelector((state) => state.trip.city);
 
   const plan = useSelector((state) => state.plan.plan);
 
   function generatePlan() {
     dispatch(setBudget(Number(budget)));
     dispatch(setTime(Number(time)));
-    const filtered = places.filter((p) => p.city === "all" || p.city === city);
+
+    const filtered = places.filter(
+      (p) => p.city.includes("all") || p.city.includes(city),
+    );
 
     const result = filtered.filter(
       (p) =>
@@ -64,21 +68,12 @@ export default function TripPlanner() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          // backgroundAttachment: "fixed",
+          backgroundAttachment: "fixed",
         }}
       >
         <Description />
 
-        <Labels
-          budget={budget}
-          setBudget={setBudgetInput}
-          time={time}
-          setTime={setTimeInput}
-          gang={gang}
-          setGang={setGang}
-          city={city}
-          setCity={setCity}
-        />
+        <Labels />
 
         <button onClick={generatePlan}>Generate Plan</button>
 
@@ -92,13 +87,10 @@ export default function TripPlanner() {
               grouped={grouped}
               expanded={expanded}
               setExpanded={setExpanded}
-
             />
           )}
 
-          {plan.length > 0 && (
-            <TripList/>
-          )}
+          {plan.length > 0 && <TripList />}
         </div>
       </div>
     </div>
