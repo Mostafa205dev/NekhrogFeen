@@ -64,7 +64,7 @@ export default function TripPlanner() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
         }}
       >
         <Description />

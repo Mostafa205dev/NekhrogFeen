@@ -10,6 +10,10 @@
     gap: 20px;
     box-shadow: 0 0 5px rgba(53, 53, 53, 0.385);
     min-width: fit-content;
+    min-height: 300px;
+    position: sticky;
+    top: 60px;
+    align-self: flex-start;
 
 }
 

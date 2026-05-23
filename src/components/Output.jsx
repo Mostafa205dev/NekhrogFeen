@@ -3,12 +3,18 @@ import "./Output.css";
 import { useNavigate } from "react-router-dom";
 import { addToTrip } from "../store/tripSlice";
 
-function Output({ grouped, expanded, setExpanded}) {
+function Output({
+  grouped,
+  expanded,
+  setExpanded,
+  showViewMore = true,
+  showAll = false,
+}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-  const budget = useSelector(state => state.trip.budget);
-  const time = useSelector(state => state.trip.time);
+
+  const budget = useSelector((state) => state.trip.budget);
+  const time = useSelector((state) => state.trip.time);
   const tripItems = useSelector((state) => state.trip.tripItems);
 
   const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
@@ -41,7 +47,11 @@ function Output({ grouped, expanded, setExpanded}) {
       {Object.entries(grouped).map(([category, items]) => {
         const isExpanded = expanded[category];
 
-        const visibleItems = isExpanded ? items : items.slice(0, 3);
+        const visibleItems = showAll
+          ? items
+          : isExpanded
+            ? items
+            : items.slice(0, 3);
 
         return (
           <div className="category-card" key={category}>
@@ -51,12 +61,10 @@ function Output({ grouped, expanded, setExpanded}) {
                 {translations[category]}
               </h2>
 
-              {items.length > 3 && (
+              {showViewMore && items.length > 3 && (
                 <button
                   className="view-more-btn"
-                  onClick={() =>
-                    navigate(`/${category}`)
-                  }
+                  onClick={() => navigate(`/${category}`)}
                 >
                   View More
                 </button>

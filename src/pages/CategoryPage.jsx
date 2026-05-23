@@ -1,31 +1,21 @@
-import { useNavigate, useParams  } from "react-router-dom";
-import { useDispatch ,useSelector} from "react-redux";
-import { addToTrip } from "../store/tripSlice";
+import { useNavigate, useParams } from "react-router-dom";
+
 import places from "../data/Places";
 import "./CategoryPage.css";
 import TripList from "../components/TripList";
+import Output from "../components/Output";
 import { Helmet } from "react-helmet";
+import NotFound from "./NotFound";
+
 export default function CategoryPage() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { category } = useParams();
 
-  const budget = useSelector((state) => state.trip.budget);
-  const time = useSelector((state) => state.trip.time);
-  const tripItems = useSelector(state => state.trip.tripItems);
-  const totalPrice = tripItems.reduce((sum, item) => sum + item.price, 0);
-
-  const totalTime = tripItems.reduce((sum, item) => sum + item.duration, 0);
   const validCategories = ["cinema", "restaurant", "cafe", "activity"];
 
-  // ❌ لازم أول حاجة
+  // check route
   if (!validCategories.includes(category)) {
-    return (
-      <div>
-        <h1>404 Not Found</h1>
-        <button onClick={() => navigate("/")}>Go Home</button>
-      </div>
-    );
+    return <NotFound />;
   }
 
   const seoData = {
@@ -49,19 +39,9 @@ export default function CategoryPage() {
 
   const items = places.filter((item) => item.category === category);
 
-  function handleAdd(item) {
-    if (totalPrice + item.price > budget) {
-      alert("Budget exceeded!");
-      return;
-    }
-
-    if (totalTime + item.duration > time) {
-      alert("Time exceeded!");
-      return;
-    }
-
-    dispatch(addToTrip(item));
-  }
+  const grouped = {
+    [category]: items,
+  };
 
   return (
     <div className="cinemas-page">
@@ -75,28 +55,19 @@ export default function CategoryPage() {
         <link rel="canonical" href={`https://nekhrogfeen.app/${category}`} />
       </Helmet>
 
-      <TripList />
-
-      <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
-
       <button className="home-btn" onClick={() => navigate("/")}>
         ⬅ Back to Home
       </button>
 
-      <div className="list">
-        {items.map((item, index) => (
-          <div key={index} className="card">
-            <img src={item.image} alt={item.name} />
+      <Output
+        grouped={grouped}
+        expanded={{}}
+        setExpanded={() => {}}
+        showViewMore={false}
+        showAll={true}
+      />
 
-            <h3>{item.name}</h3>
-
-            <p>💰 {item.price} EGP</p>
-            <p>⏰ {item.duration} Hours</p>
-
-            <button onClick={() => handleAdd(item)}>Add +</button>
-          </div>
-        ))}
-      </div>
+      <TripList />
     </div>
   );
 }

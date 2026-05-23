@@ -1,17 +1,14 @@
 .cinemas-page {
   max-width: 1200px;
   margin: auto;
-  padding: 30px 20px;
+  /* padding: 30px 20px; */
+  margin-top: 30px;
   font-family: Arial, sans-serif;
   color: #222;
-  /* display: flex; */
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
-.cinemas-page h1 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #3737f1;
 }
 
 .cinemas-page h2 {
@@ -19,82 +16,18 @@
   margin-bottom: 15px;
 }
 
-.list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-/* Card */
-.card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 15px;
-  text-align: center;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.card h3 {
+.cinemas-page button {
+  background-color: rgb(8, 8, 228);
+  color: white;
+  padding: 12px 15px;
+  align-self: center;
+  max-width: fit-content;
+  border: none;
+  border-radius: 15px;
   font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 14px;
-  margin: 5px 0;
-  color: #555;
-}
-
-/* Buttons */
-.card button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
-  transition: 0.2s;
-}
-
-.card button:hover {
-  opacity: 0.8;
-}
-
-/* Add button */
-.card button {
-  background: #3737f1;
-  color: white;
-}
-
-/* Selected Trip card */
-.card.selected {
-  background: #f4f6ff;
-  border: 1px solid #3737f1;
-}
-
-.card.selected button {
-  background: #ff4d4d;
-  color: white;
-}
-
-/* Divider */
-.cinemas-page hr {
-  margin: 40px 0;
-  border: none;
-  border-top: 1px solid #ddd;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .home-btn {

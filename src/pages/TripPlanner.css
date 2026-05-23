@@ -6,7 +6,7 @@
 
 html,
 body{
-    overflow-x: hidden;
+     overflow-x: clip;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -33,7 +33,7 @@ body{
     font-weight: bold;
 
     cursor: pointer;
-
+    
     transition: 0.3s;
 }
 .body button:hover{
@@ -42,7 +42,7 @@ body{
 .test {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-around;
     gap: 30px; 
 }
