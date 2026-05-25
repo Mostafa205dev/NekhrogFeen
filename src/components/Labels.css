@@ -71,3 +71,17 @@
     border-style:groove;
     color: black;
 }
+
+
+
+@media (max-width:600px) {
+    .labels .input-label{
+        justify-content: space-between;
+    }
+    .labels .input-label{
+        width: 150px;  
+    }
+    .labels h3{
+        font-size: 15px;
+    }
+}

@@ -12,14 +12,6 @@ export default function Footer() {
     <div className="footer">
       <h3 className="icon">NekhrogFeen</h3>
       <div className="links">
-        {/* <p>
-          <FaPhone />
-          01023113960
-        </p>
-        <p>
-          <FaWhatsapp size={30} color="green" />
-          01155410622
-        </p> */}
         <a
           href="https://www.linkedin.com/in/mostafa-tarek-448665250/"
           target="_blank"
