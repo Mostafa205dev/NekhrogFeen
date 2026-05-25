@@ -21,6 +21,7 @@ export default function TripPlanner() {
   const [selected, setSelected] = useState(["all"]);
   const [expanded, setExpanded] = useState({});
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
 
   const budget = useSelector((state) => state.trip.budget);
   const time = useSelector((state) => state.trip.time);
@@ -71,6 +72,9 @@ export default function TripPlanner() {
           backgroundAttachment: "fixed",
         }}
       >
+        <button className="triplist-toggle" onClick={() => setIsOpen(!isOpen)}>
+          🗺️
+        </button>
         <Description />
 
         <Labels />
@@ -90,7 +94,7 @@ export default function TripPlanner() {
             />
           )}
 
-          {plan.length > 0 && <TripList />}
+          {plan.length > 0 && <TripList isOpen={isOpen}/>}
         </div>
       </div>
     </div>

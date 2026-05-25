@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { removeFromTrip } from "../store/tripSlice";
 
-function TripList() {
+function TripList({ isOpen }) {
   const dispatch = useDispatch();
 
   const tripItems = useSelector(state => state.trip.tripItems);
@@ -23,7 +23,7 @@ function TripList() {
 
   
   return (
-    <div className="TripList">
+    <div className={`TripList ${isOpen ? "open" : ""}`}>
       <div className="leftthings">
         <h3>MoneyLeft: {remainingBudget}EGP</h3>
         <h3>TimeLeft: {remainingTime}Hours</h3>

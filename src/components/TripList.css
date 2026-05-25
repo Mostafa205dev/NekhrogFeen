@@ -52,14 +52,12 @@
     border-radius: 20px;
 }
 .TripList .item .discription p:nth-child(1) {
-    /* background-color: rgba(0, 128, 0, 0.511); */
     color: green;
     border: green 2px inset;
     
 }
 
 .TripList .item .discription p:nth-child(2) {
-    /* box-shadow: 0 0 5px rgba(53, 53, 53, 0.385); */
     border: red 2px inset;
     color: red;
     
@@ -77,7 +75,25 @@
 }
 
 @media (max-width:600px) {
-    .TripList{
-        display: none;
+    .TripList {
+        position: fixed;
+        background-color: rgb(240, 248, 255);
+        align-self: self-end;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: fit-content;
+        min-height: fit-content;
+        z-index: 100;
     }
+
+    .TripList.open {
+        bottom: 0;
+    }
+    .TripList .item{
+        flex-direction: row;
+    }
+
 }
