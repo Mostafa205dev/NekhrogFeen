@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-
+import { useState } from "react";
 import places from "../data/Places";
 import "./CategoryPage.css";
 import TripList from "../components/TripList";
@@ -10,6 +10,7 @@ import NotFound from "./NotFound";
 export default function CategoryPage() {
   const navigate = useNavigate();
   const { category } = useParams();
+  const [isOpen, setIsOpen] = useState(false); 
 
   const validCategories = ["cinema", "restaurant", "cafe", "activity"];
 
@@ -55,6 +56,13 @@ export default function CategoryPage() {
         <link rel="canonical" href={`https://nekhrogfeen.app/${category}`} />
       </Helmet>
 
+      <button 
+        className="triplist-toggle" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        🗺️
+      </button>
+
       <button className="home-btn" onClick={() => navigate("/")}>
         ⬅ Back to Home
       </button>
@@ -67,7 +75,7 @@ export default function CategoryPage() {
         showAll={true}
       />
 
-      <TripList />
+      <TripList isOpen={isOpen} />
     </div>
   );
 }
