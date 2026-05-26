@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.nekhrogfeen.app"
+        }
+      ],
+      "destination": "https://nekhrogfeen.app/$1",
+      "permanent": true
+    }
+  ]
+}
