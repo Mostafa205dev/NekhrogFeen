@@ -13,12 +13,17 @@ body{
 .body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding : 30px 80px 50px 80px;
     gap: 40px;
     min-height: 82vh;
 }
-
+.body h1{
+    color: blue;
+    text-align: center;
+}
 .body  button{
     background-color: rgb(8, 8, 228);
     color: white;

@@ -72,6 +72,7 @@ export default function TripPlanner() {
           backgroundAttachment: "fixed",
         }}
       >
+        <h1> نخرج فين؟ | NekhrogFeen </h1>
         <button className="triplist-toggle" onClick={() => setIsOpen(!isOpen)}>
           🗺️
         </button>
@@ -94,7 +95,7 @@ export default function TripPlanner() {
             />
           )}
 
-          {plan.length > 0 && <TripList isOpen={isOpen}/>}
+          {plan.length > 0 && <TripList isOpen={isOpen} />}
         </div>
       </div>
     </div>
