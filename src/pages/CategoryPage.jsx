@@ -10,7 +10,7 @@ import NotFound from "./NotFound";
 export default function CategoryPage() {
   const navigate = useNavigate();
   const { category } = useParams();
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
 
   const validCategories = ["cinema", "restaurant", "cafe", "activity"];
 
@@ -28,6 +28,16 @@ export default function CategoryPage() {
     restaurant: {
       title: "أفضل المطاعم في مصر | NekhrogFeen",
       desc: "دليل أفضل المطاعم في القاهرة والإسكندرية.",
+    },
+
+    cafe: {
+      title: "أفضل الكافيهات في مصر | NekhrogFeen",
+      desc: "استكشف أجمل الكافيهات في القاهرة والإسكندرية واختار أروع مكان لقعدة مميزة.",
+    },
+
+    activity: {
+      title: "أفضل الأنشطة في مصر | NekhrogFeen",
+      desc: "اعثر على أجمل الأنشطة والخروجات في مصر وتمتع بتجربة ممتعة مع الأصدقاء والعائلة.",
     },
   };
 
@@ -56,10 +66,7 @@ export default function CategoryPage() {
         <link rel="canonical" href={`https://nekhrogfeen.app/${category}`} />
       </Helmet>
 
-      <button 
-        className="triplist-toggle" 
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className="triplist-toggle" onClick={() => setIsOpen(!isOpen)}>
         🗺️
       </button>
 
