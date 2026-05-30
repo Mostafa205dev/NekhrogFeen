@@ -68,13 +68,13 @@
     display: none;
   }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .header-container{
     width: 95%;
     background-color: white;
-    box-shadow: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.095);
     flex-wrap: wrap;
+    /* justify-content: center; */
     gap: 5px;
   }
   
