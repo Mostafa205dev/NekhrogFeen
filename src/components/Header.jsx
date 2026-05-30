@@ -11,6 +11,9 @@ export default function Header() {
         <FaLocationDot className="logo-icon" />
         <h2>NekhrogFeen</h2>
       </header>
+      <button className="join">
+        <p>نخرج فين ؟</p>
+      </button>
 
       <div className="middle-buttons">
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>
